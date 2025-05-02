@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :root {
+    --background: #000430;
+    --secondary-background: #178c48;
+    --text: #fff;
+    --purple: #828dff;
+    --teal: #24feee;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: sans-serif;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 80px auto 0;         /* reduced from 120px */
+    max-width: 400px;            /* reduced from 500px */
+  }
+  .stats-container {
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid var(--purple);
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+  }
+  .details {
+    width: 100%;
+  }
+  #Progress {
+    width: 80%;
+    height: 10px;
+    background-color: var(--teal);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  #numbers {
+    width: 100px;
+    height: 100px;
+    background-color: var(--purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  #ProgressBar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--secondary-background);
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  form {
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+  input {
+    flex: 1;
+    padding: 10px;
+    background: var(--background);
+    border: 1px solid lightskyblue;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+  }
+  button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--purple);
+    color: var(--text);
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+  .task-list {
+    margin-top: 30px;
+    width: 100%;
+    list-style: none;
+  }
+  .taskItem {
+    background: linear-gradient(to left, #2c7fdf, #061731); /* light blue to dark blue */
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .task.completed p {
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+  .icons span {
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+  }
+  /* Popup modal */
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #222;
+    color: #fff;
+    padding: 40px;                 /* increased padding for a larger feel */
+    border-radius: 12px;
+    z-index: 999;
+    box-shadow: 0 0 20px #00ffcc;
+    text-align: center;
+    transition: all 0.3s ease;
+    max-width: 400px;              /* limit width for readability */
+  }
+  
+  .popup.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .popup h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .popup p {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .popup button {
+    margin-top: 15px;
+    background: var(--teal);
+    color: black;
+    border-radius: 8px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s ease;
+  }
+  
+  .popup button:hover {
+    background: #1dd1a1;
+  }
+  
+  .popup button {
+    width: 100%;
+  }
+  
+  
+  .edit-input {
+    flex: 1;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid lightskyblue;
+    background-color: #222;
+    color: white;
+  }
+  .icons span {
+    font-size: 20px;
+    color: orange;  /* for edit */
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  .icons img {
+    width: 30px;               /* set a fixed width */
+    height: 30px;              /* set the same height */
+    border-radius: 50%;        /* make it perfectly circular */
+    object-fit: cover;         /* ensure the image fills the circle */
+    background-color: #444;    /* optional: add a dark background */
+    padding: 5px;              /* optional: give inner spacing */
+    cursor: pointer;
+    margin-left: 8px;
+    transition: transform 0.2s ease;
+  }
+  
+  .icons img:hover {
+    transform: scale(1.1);     /* slightly enlarge on hover */
+  }
+  
+      
